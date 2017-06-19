@@ -8,7 +8,7 @@
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	 crossorigin="anonymous">
+		crossorigin="anonymous">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<!-- Ionicons -->
@@ -18,13 +18,7 @@
 
 	<link rel="stylesheet" href="dist/css/skins/skin-blue.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/index.css">
-	<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
-	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	 crossorigin="anonymous"></script>
-	<script src="dist/js/moment.js"></script>
-	<script src="dist/js/Chart.js"></script>
-	<script src="dist/js/app.min.js"></script>
-	<script src="dist/js/index.js"></script>
+
 
 </head>
 
@@ -42,18 +36,28 @@
 				<div class="myenv-location">
 					<div>myENV</div>
 					<div class="myenv-locationname">
-						<span>Current Location</span>
-						<span class="glyphicon glyphicon-chevron-down down-top" aria-hidden="true"></span>
+						<span class="myenv-locationname-span">Current Location</span>
+						<span class="glyphicon glyphicon-chevron-down down-top dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+							aria-hidden="true"></span>
+						<ul class="dropdown-menu myenv-selectcitys">
+							<li><a data-name="北京" href="#">Beijing</a></li>
+							<li><a data-name="上海" href="#">Shanghai</a></li>
+							<li><a data-name="广州" href="#">Guangzhou</a></li>
+							<li><a data-name="深圳" href="#">Shenzhen</a></li>
+						</ul>
 					</div>
+
+
 				</div>
+
 				<!-- Navbar Right -->
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
-						<li class="dropdown notifications-menu">
+						<li class="dropdown notifications-menu myenv-alerts">
 							<!-- Menu toggle button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-bell-o"></i>
-								<span class="label label-warning">10</span>
+								<span class="label label-warning">0</span>
 							</a>
 						</li>
 					</ul>
@@ -94,7 +98,7 @@
 						<div class="env-weatherright">
 							<div class="env-weathermsg">Cloudy</div>
 							<div class="env-weatherdata">
-								<img class="env-weatherdata-tem" src="dist/img/temperature.png"><span>29.2℃</span>
+								<img class="env-weatherdata-tem" src="dist/img/temperature.png"><span class="weatherdata-tem-span">29.2℃</span>
 								<img class="env-weatherdata-wat" src="dist/img/water.png"><span>73%</span>
 							</div>
 							<!--<div class="glyphicon glyphicon-tint" aria-hidden="true"></div>-->
@@ -119,7 +123,7 @@
 								RAIN
 							</div>
 							<div class="env-itemrain-num">
-								<span>0</span>
+								<span>2.5</span>
 							</div>
 							<div>
 								mm
@@ -158,23 +162,26 @@
 							</div>
 							<span class="et-sun">Sunrise &amp; Sunset</span>
 						</div>
-						<div style="height:300px; width:1080px;"  >
-							<canvas id="areaChart" width="1080" height="300"></canvas>
+						<div style="overflow:scroll;">
+							<div style="height:300px; width:1080px;">
+								<canvas id="areaChart" width="1080" height="300"></canvas>
+							</div>
 						</div>
 
 					</div>
 				</div>
 			</div>
-			<!-- /.content-wrapper -->
-			<!-- Main Footer -->
 
 		</div>
-		<!--<footer class="main-footer" style="text-align: center;">
-			<div class="pull-right hidden-xs">
-
-			</div>
-		</footer>-->
-	</div>
+		<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous"></script>
+		<script src="dist/js/lib/moment.js"></script>
+		<script src="dist/js/lib/Chart.js"></script>
+		<script src="dist/js/app.min.js"></script>
+		<script src="dist/js/viewModel.js"></script>
+		<script src="dist/js/function.js"></script>
+		<script src="dist/js/index.js"></script>
 </body>
 
 </html>

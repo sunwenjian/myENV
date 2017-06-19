@@ -1,30 +1,27 @@
 $(function () {
-    window.randomScalingFactor = function () {
-        return (Math.random()) * Math.round(Math.random() * 100);
-    };
-    var timeFormat = 'MM/DD/YYYY HH:mm';
-    var hourFormat = "HH:mm";
-    function newDate(days) {
-        return moment().add(days, 'd').toDate();
-    }
 
-    function newDateString(days) {
-        return moment().add(days, 'd').format(timeFormat);
-    }
-
-    function newTimestamp(days) {
-        return moment().add(days, 'd').unix();
-    }
-
-    function newHour(hours) {
-        return moment().add(hours, 'h').format(timeFormat);
-    }
+    //current city
+    weatherAjax("北京");
+    //alert 
+    $(".myenv-alerts").click(function () {
+        var alerts = $(this).find(".label-warning").val();
+        if (alerts == 0) {
+            alert("no alert");
+        }
+        else {
+            //to get alerts
+        }
+    });
+    //selectcity
+    $('.myenv-selectcitys a').click(function (event) {
+        //get weather msg
+        weatherAjax($(this).attr("data-name"));
+        $('.myenv-locationname-span').text($(this).text());
+    });
 
     // Get context with jQuery - using jQuery's .get() method.
     var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
     // This will get the first returned node in the jQuery collection.
-
-
     var areaChartData = {
         labels: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 am", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm"],
         datasets: [
@@ -33,14 +30,14 @@ $(function () {
                 type: "line",
                 // label: "Sunrise&Sunset",
                 labels: [
-					newHour(1),
-					newHour(3), 
-					newHour(5), 
-					newHour(7), 
-					newHour(9), 
-					newHour(11), 
-					newHour(12)
-				],
+                    newHour(1),
+                    newHour(3),
+                    newHour(5),
+                    newHour(7),
+                    newHour(9),
+                    newHour(11),
+                    newHour(12)
+                ],
                 borderColor: "#fca23c",
                 fill: false,
                 // pointRadius: 0,
@@ -64,7 +61,7 @@ $(function () {
                     x: newHour(11),
                     y: 2
                 }
-                , {
+                    , {
                     x: newHour(12),
                     y: 1.5
                 }
@@ -110,11 +107,11 @@ $(function () {
                     x: newHour(8),
                     y: 1.2
                 }
-                , {
+                    , {
                     x: newHour(10),
                     y: 0.9
                 }
-                , {
+                    , {
                     x: newHour(12),
                     y: 0.7
                 }
@@ -147,7 +144,6 @@ $(function () {
             }
         ]
     };
-
     var areaChartOptions = {
         responsive: true,
         legend: {
@@ -155,10 +151,11 @@ $(function () {
         },
         scales: {
             xAxes: [{
+                display: true,
                 type: "time",
                 time: {
                     format: timeFormat,
-                     round: 'm'
+                    round: 'm'
                     // tooltipFormat: 'll HH:mm'
                 },
                 scaleLabel: {
@@ -167,6 +164,7 @@ $(function () {
                 }
             },],
             yAxes: [{
+                display: true,
                 scaleLabel: {
                     display: false,
                     labelString: 'value'
@@ -174,11 +172,8 @@ $(function () {
             }]
         }
     };
-
     //Create the line chart
     var chartConfig = { type: "line", data: areaChartData, options: areaChartOptions };
     var areaChart = new Chart(areaChartCanvas, chartConfig);
-
-
 
 });
