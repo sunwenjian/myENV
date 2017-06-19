@@ -40,7 +40,7 @@ $(function () {
                 ],
                 borderColor: "#fca23c",
                 fill: false,
-                // pointRadius: 0,
+                pointRadius: 0,
                 // data: [0, 10, 20, 30, 40, 50, 60, 50, 40, 29, 20, 15, 0]
                 data: [{
                     x: newHour(1),
@@ -138,7 +138,7 @@ $(function () {
                 ],
                 fill: true,
                 type: "line",
-                // pointRadius: 0,
+                pointRadius: 0,
                 backgroundColor: "#aae0f5",
                 borderColor: "#91d7f3"
             }
