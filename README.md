@@ -19,4 +19,17 @@ AdminLTE
 
 # page design
 The HTML5 Home screen works in Safari(Destop and IOS)
-CSS  Media query
+
+HTML5 - new semantic elements such as header, NAV, section, article, aside, footer, etc.
+
+CSS-Media query, Bootstrap AdminLTE response template framework
+
+JS- uses jQuery.js for event binding, JSON data format passing, AJAX calling, and moment.js chart.js drawing diagrams.
+
+  Frontend MVC， viewModel  lib(function.js)  Controller   HTML template(view)
+
+Server api- uses Baidu weather interface API to display dynamic weather data.
+
+
+# PS
+I'm still trying to implement it in a reactjs and component-based way,Because of the relationship between time, there are still many problems.
