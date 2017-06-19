@@ -1,5 +1,6 @@
 $(function () {
-
+    document.onreadystatechange = function () { 
+        document.documentElement.scrollLeft = (document.documentElement.scrollWidth - document.documentElement.offsetWidth) / 2; };
     //current city
     weatherAjax("北京");
     //alert 
@@ -164,7 +165,7 @@ $(function () {
                 }
             },],
             yAxes: [{
-                display: true,
+                display: false,
                 scaleLabel: {
                     display: false,
                     labelString: 'value'
