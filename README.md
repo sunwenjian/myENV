@@ -33,3 +33,10 @@ Server api- uses Baidu weather interface API to display dynamic weather data.
 
 # PS
 I'm still trying to implement it in a reactjs and component-based way,Because of the relationship between time, there are still many problems.
+
+#add myENV-reactjs
+
+ quick overview
+ npm install
+ npm start
+ Open http://localhost:3000/ with your browser
